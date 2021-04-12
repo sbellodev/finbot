@@ -1,13 +1,19 @@
+# This is a telegram bot that gives you data about crypto financial/investing 
+# Bot @ is @Buyostonkbot
+
+# Source Code Idea
 https://github.com/SouravJohar/gangsta
 https://www.youtube.com/watch?v=5nhdxpoicW4&t=550s&ab_channel=SouravJohar
 
+# How to use an API with python
+https://rapidapi.com/blog/how-to-use-an-api-with-python/
 
-Financial api
+# Financial API
 https://financialmodelingprep.com/api/v3/quote/BTCUSD?apikey=849bd6e723cfcff8203a8b05cb2ddc08
 https://financialmodelingprep.com/api/v3/profile/AAPL?apikey=demo
 
-Errors
-*   KeyError
+# Errors
+* KeyError
     https://realpython.com/python-keyerror/
 
     ['message']['from']['id']

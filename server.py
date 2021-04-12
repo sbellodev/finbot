@@ -21,11 +21,14 @@ while True:
                 message = str(item["message"]["text"]) # what you type on chat
             except:
                 message = None
-                
+
             print(item)
             from_ = 239266037 # my telegram user id
             #from_ = item["message"]["from"]["id"]
             reply = make_reply(message)
             response = requests.get(btc) 
-            bot.send_message(response.text+' 🚀', from_)
+            if message == "help":
+                bot.send_message('Hi how can I help uwu?', from_)
+            else:
+                bot.send_message(response.text+' 🚀', from_)
             #bot.send_message(reply, from_)
