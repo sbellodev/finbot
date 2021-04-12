@@ -5,3 +5,13 @@ https://www.youtube.com/watch?v=5nhdxpoicW4&t=550s&ab_channel=SouravJohar
 Financial api
 https://financialmodelingprep.com/api/v3/quote/BTCUSD?apikey=849bd6e723cfcff8203a8b05cb2ddc08
 https://financialmodelingprep.com/api/v3/profile/AAPL?apikey=demo
+
+Errors
+*   KeyError
+    https://realpython.com/python-keyerror/
+
+    ['message']['from']['id']
+    message is not found so I wrote my id directly on the variable
+            from_ = 239266037 # my telegram user id
+            #from_ = item["message"]["from"]["id"]
+    {'update_id': 286988464, 'message': {'message_id': 83, 'from': {'id': 239266037, 'is_bot': False, 'first_name': 'Phoskita', 'username': 'phoskita', 'language_code': 'en'}, 'chat': {'id': 239266037, 'first_name': 'Phoskita', 'username': 'phoskita', 'type': 'private'}, 'date': 1618261550, 'text': 'e'}}
