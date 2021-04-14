@@ -1,5 +1,11 @@
 # This is a telegram bot that gives you data about crypto financial/investing 
 # Bot @ is @Buyostonkbot
+## By https://github.com/debello
+
+# TO-DO
+        [] Bot working automatically
+                add webhook to code (add url ab.com/finbot)
+
 
 # Source Code Idea
 https://github.com/SouravJohar/gangsta
@@ -19,7 +25,9 @@ https://financialmodelingprep.com/api/v3/profile/AAPL?apikey=demo
 
 
 ## Deploy & Hosting
-https://www.pythonanywhere.com/
+        CPanel > Python APP
+                /finbot/<content>
+                /public_html/finbot/<content>
 
 
 ## Errors
