@@ -4,24 +4,34 @@
 
 # TO-DO
         [] Bot working automatically
-                add webhook to code (add url ab.com/finbot)
-
+                [x] add webhook to code 
+                [-] (add url ab.com/finbot)
+                [ ] test 
+                        https://levelup.gitconnected.com/six-easy-steps-to-create-a-telegram-bot-from-a-google-spreadsheet-b62008d2b81f
 
 # Source Code Idea
-https://github.com/SouravJohar/gangsta
-https://www.youtube.com/watch?v=5nhdxpoicW4&t=550s&ab_channel=SouravJohar
+        https://github.com/SouravJohar/gangsta
+        https://www.youtube.com/watch?v=5nhdxpoicW4&t=550s&ab_channel=SouravJohar
 
 
 ## APIs
 # Telegram Bot API 
-https://cran.r-project.org/web/packages/telegram.bot/vignettes/telegrambot-introduction.html
+        https://cran.r-project.org/web/packages/telegram.bot/vignettes/telegrambot-introduction.html
+# Set Webhook
+        https://www.youtube.com/watch?v=MdPpC4w8yNY&ab_channel=BasselTech
+        https://atareao.es/tutorial/crea-tu-propio-bot-para-telegram/webhooks-o-como-sacar-a-telegram-hasta-la-ultima-gota/
 
+        https://api.telegram.org/bot<YOUR_TOKEN>/getupdates
+        https://api.telegram.org/bot1701564134:AAH9c6aSNaxUVnbHmYV065f996GKc3QSrEY/getupdates
+        https://api.telegram.org/bot1701564134:AAH9c6aSNaxUVnbHmYV065f996GKc3QSrEY/setWebhook?url=animalbrowsing.com/finbot
+        " /getWebhookInfo
 # How to use an API with python
-https://rapidapi.com/blog/how-to-use-an-api-with-python/
+        https://rapidapi.com/blog/how-to-use-an-api-with-python/
+
 
 # Financial API
-https://financialmodelingprep.com/api/v3/quote/BTCUSD?apikey=849bd6e723cfcff8203a8b05cb2ddc08
-https://financialmodelingprep.com/api/v3/profile/AAPL?apikey=demo
+        https://financialmodelingprep.com/api/v3/quote/BTCUSD?apikey=849bd6e723cfcff8203a8b05cb2ddc08
+        https://financialmodelingprep.com/api/v3/profile/AAPL?apikey=demo
 
 
 ## Deploy & Hosting
