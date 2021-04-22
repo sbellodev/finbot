@@ -17,14 +17,12 @@
 ## APIs
 # Telegram Bot API 
         https://cran.r-project.org/web/packages/telegram.bot/vignettes/telegrambot-introduction.html
-# Set Webhook
+# Set Webhook (! NOT USED)
         https://www.youtube.com/watch?v=MdPpC4w8yNY&ab_channel=BasselTech
         https://atareao.es/tutorial/crea-tu-propio-bot-para-telegram/webhooks-o-como-sacar-a-telegram-hasta-la-ultima-gota/
-
         https://api.telegram.org/bot<YOUR_TOKEN>/getupdates
-        https://api.telegram.org/bot1701564134:AAH9c6aSNaxUVnbHmYV065f996GKc3QSrEY/getupdates
-        https://api.telegram.org/bot1701564134:AAH9c6aSNaxUVnbHmYV065f996GKc3QSrEY/setWebhook?url=https://animalbrowsing.com/finbot
         " /getWebhookInfo
+
 # How to use an API with python
         https://rapidapi.com/blog/how-to-use-an-api-with-python/
 
@@ -35,9 +33,6 @@
 
 
 ## Deploy & Hosting
-        CPanel > Python APP
-                /finbot/<content>
-                /public_html/finbot/<content>
         Heroku
                 https://buyo-finbot.herokuapp.com/
 
