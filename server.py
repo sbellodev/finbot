@@ -12,27 +12,27 @@ def make_reply(msg):
         
 def runbot():
     update_id = None
-    #while True:
-    updates = bot.get_updates(offset=update_id)
-    updates = updates["result"]
-    if updates:
-        for item in updates:
-            update_id = item["update_id"]
-            try:
-                message = str(item["message"]["text"]) # what you type on chat
-            except:
-                message = None
+    while True:
+        updates = bot.get_updates(offset=update_id)
+        updates = updates["result"]
+        if updates:
+            for item in updates:
+                update_id = item["update_id"]
+                try:
+                    message = str(item["message"]["text"]) # what you type on chat
+                except:
+                    message = None
 
-            print(item)
-            from_ = 239266037 # my telegram user id
-            #from_ = item["message"]["from"]["id"]
-            reply = make_reply(message)
-            response = requests.get(btc) 
-            if message == "help":
-                bot.send_message('Hi how can I help uwu?', from_)
-            if message == "uwu":
-                bot.send_message('heheh ewe', from_)
-            else:
-                bot.send_message(response.text+' 🚀', from_)
-            #bot.send_message(reply, from_)
+                print(item)
+                from_ = 239266037 # my telegram user id
+                #from_ = item["message"]["from"]["id"]
+                #reply = make_reply(message)
+                response = requests.get(btc) 
+                if message == "help":
+                    bot.send_message('Hi how can I help uwu?', from_)
+                if message == "uwu":
+                    bot.send_message('heheh ewe', from_)
+                else:
+                    bot.send_message(response.text+' 🚀', from_)
+                #bot.send_message(reply, from_)
 runbot()
