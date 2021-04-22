@@ -24,8 +24,8 @@ def runbot():
                     message = None
 
                 print(item)
-                from_ = 239266037 # my telegram user id
-                #from_ = item["message"]["from"]["id"]
+                #from_ = 239266037 # enabled for single user 
+                from_ = item["message"]["from"]["id"] # enabled for everyone
                 #reply = make_reply(message)
                 response = requests.get(btc) 
                 if message == "help":
