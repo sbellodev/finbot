@@ -38,6 +38,8 @@
         CPanel > Python APP
                 /finbot/<content>
                 /public_html/finbot/<content>
+        Heroku
+                https://buyo-finbot.herokuapp.com/
 
 
 ## Errors
