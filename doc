@@ -23,7 +23,7 @@
 
         https://api.telegram.org/bot<YOUR_TOKEN>/getupdates
         https://api.telegram.org/bot1701564134:AAH9c6aSNaxUVnbHmYV065f996GKc3QSrEY/getupdates
-        https://api.telegram.org/bot1701564134:AAH9c6aSNaxUVnbHmYV065f996GKc3QSrEY/setWebhook?url=animalbrowsing.com/finbot
+        https://api.telegram.org/bot1701564134:AAH9c6aSNaxUVnbHmYV065f996GKc3QSrEY/setWebhook?url=https://animalbrowsing.com/finbot
         " /getWebhookInfo
 # How to use an API with python
         https://rapidapi.com/blog/how-to-use-an-api-with-python/
