@@ -64,7 +64,7 @@ def runbot():
                     bot.send_message("Type btc, iot or all \n or help uwu", from_)
         else:
             api_coin = coin_reply(base_url+coin_iot, "auto") or ''
-            if api_coin and != last_msg:
+            if api_coin and api_coin != last_msg:
                 bot.send_message(api_coin, 239266037) # Only in development mode
             last_msg = api_coin
 
