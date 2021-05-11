@@ -16,7 +16,7 @@ def coin_reply(coin_url, mode="manual"):
     e = data['symbol'] + ' ' + data['name'] + ' \n Price: \t' + data['price'] + ' \n btcPrice: \t' + data['btcPrice'] + ' \n Change: \t' + data['change']
     if mode == "manual":
         return e
-    if mode == "auto":
+    elif mode == "auto":
         if float(data['change']) < -5:
             return e + '\n > BUY TIME 🌕🌑'
         elif float(data['change']) > 10:
@@ -25,7 +25,8 @@ def coin_reply(coin_url, mode="manual"):
             return e + '\n > SELL TIME 🌕🌑'
         else: 
             return ''
-    return ''
+    else:
+        return ''
     
 def make_reply(msg):
     reply = None
@@ -35,6 +36,7 @@ def make_reply(msg):
         
 def runbot():
     update_id = None
+    last_msg = None
     while True:
         updates = bot.get_updates(offset=update_id)
         updates = updates["result"]
@@ -61,8 +63,11 @@ def runbot():
                 else:
                     bot.send_message("Type btc, iot or all \n or help uwu", from_)
         else:
-            # Continuous % coin Check
-            #bot.send_message("Automatically-updated", 239266037) # Only in development mode
-            all_coins = coin_reply(base_url+coin_btc, "auto") + "\n" +  coin_reply(base_url+coin_iot, "auto")
-            bot.send_message(all_coins, from_)
+            api_coin = coin_reply(base_url+coin_iot, "auto") or ''
+            if api_coin and != last_msg:
+                bot.send_message(api_coin, 239266037) # Only in development mode
+            last_msg = api_coin
+
+            #all_coins = coin_reply(base_url+coin_btc, "auto") + "\n" +  coin_reply(base_url+coin_iot, "auto") # add all coins
+            #bot.send_message(all_coins, from_)
 runbot()
