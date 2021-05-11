@@ -11,13 +11,11 @@ coin_key = 'coinranking561c69335054fafd29f745fcd1592c26f2666ae0810bc273'
 
 def coin_reply(coin_url, message):
     if message == "iot":
-        print("message is iot")
         coin_url = coin_url + coin_iot
     elif message == "btc":
-        print("message is btc")
         coin_url = coin_url + coin_btc
     else:
-        return "Error. Coin not found. Try again."
+        return "Error. Coin not found. Try again or contact your administrator"
     response = requests.get(coin_url, headers={'Authorization': coin_key}) 
     d = json.loads(response.text)
     #print(d.items())
