@@ -29,8 +29,9 @@
 
 
 # Financial API
-        https://financialmodelingprep.com/api/v3/quote/BTCUSD?apikey=849bd6e723cfcff8203a8b05cb2ddc08
-        https://financialmodelingprep.com/api/v3/profile/AAPL?apikey=demo
+        https://developers.coinranking.com/api/documentation/coins#get-coin
+        # https://financialmodelingprep.com/api/v3/quote/BTCUSD?apikey=849bd6e723cfcff8203a8b05cb2ddc08 # Old
+        # https://financialmodelingprep.com/api/v3/profile/AAPL?apikey=demo # Old
 
 
 ## Deploy & Hosting
@@ -41,11 +42,19 @@
 
 
 ## Errors
-* KeyError
+* Key Error
     https://realpython.com/python-keyerror/
 
     ['message']['from']['id']
-    message is not found so I wrote my id directly on the variable
             from_ = 239266037 # my telegram user id
             #from_ = item["message"]["from"]["id"]
     {'update_id': 286988464, 'message': {'message_id': 83, 'from': {'id': 239266037, 'is_bot': False, 'first_name': 'Phoskita', 'username': 'phoskita', 'language_code': 'en'}, 'chat': {'id': 239266037, 'first_name': 'Phoskita', 'username': 'phoskita', 'type': 'private'}, 'date': 1618261550, 'text': 'e'}}
+  > message is not found so I wrote my id directly on the variable
+
+* Result Error
+        File "C:\Users\Santi\Documents\GitHub\finbot\server.py", line 39, in <module>
+        runbot()
+        File "C:\Users\Santi\Documents\GitHub\finbot\server.py", line 18, in runbot
+        updates = updates["result"]
+        KeyError: 'result
+  > Run 'python server.py' again
