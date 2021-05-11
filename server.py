@@ -8,21 +8,25 @@ coin_iot = 'LtWwuVANwRzV_' # miota
 coin_btc = 'Qwsogvtv82FCd' # btc
 coin_key = 'coinranking561c69335054fafd29f745fcd1592c26f2666ae0810bc273'
 
-
-def coin_reply(coin_url, message):
-    if message == "iot":
-        coin_url = coin_url + coin_iot
-    elif message == "btc":
-        coin_url = coin_url + coin_btc
-    else:
-        return "Error. Coin not found. Try again or contact your administrator"
+def coin_reply(coin_url, mode="manual"):
     response = requests.get(coin_url, headers={'Authorization': coin_key}) 
     d = json.loads(response.text)
     #print(d.items())
     data = d['data']['coin']
     e = data['symbol'] + ' ' + data['name'] + ' \n Price: \t' + data['price'] + ' \n btcPrice: \t' + data['btcPrice'] + ' \n Change: \t' + data['change']
-    return e
-
+    if mode == "manual":
+        return e
+    if mode == "auto":
+        if float(data['change']) < -5:
+            return e + '\n > BUY TIME 🌕🌑'
+        elif float(data['change']) > 10:
+            return e + '\n > SELL TIME 🌕🌕'
+        elif float(data['change']) > 5:
+            return e + '\n > SELL TIME 🌕🌑'
+        else: 
+            return ''
+    return ''
+    
 def make_reply(msg):
     reply = None
     if msg is not None:
@@ -46,9 +50,16 @@ def runbot():
                 if message == "help":
                     bot.send_message('Hi how can I help uwu?', from_)
                 elif message == "uwu":
-                    bot.send_message('heheh ewe', from_)
-                elif message == "iot" or message == "btc":
-                    bot.send_message(coin_reply(base_url, message), from_)
+                    bot.send_message('heheh ewe', from_, )
+                elif message == "iot":
+                    bot.send_message(coin_reply(base_url+coin_iot), from_)
+                elif message == "btc":
+                    bot.send_message(coin_reply(base_url+coin_btc), from_)
                 else:
                     bot.send_message("Type btc or iot\n or help uwu", from_)
+        else:
+            # Continuous % coin Check
+            bot.send_message("Automatically-updated", 239266037)
+            all_coins = coin_reply(base_url+coin_btc, "auto") + "\n" +  coin_reply(base_url+coin_iot, "auto")
+            bot.send_message(all_coins, from_)
 runbot()

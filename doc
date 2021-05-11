@@ -3,11 +3,8 @@
 ## By https://github.com/debello
 
 # TO-DO
-        [] Bot working automatically
-                [x] add webhook to code 
-                [-] (add url ab.com/finbot)
-                [ ] test 
-                        https://levelup.gitconnected.com/six-easy-steps-to-create-a-telegram-bot-from-a-google-spreadsheet-b62008d2b81f
+        [x] Bot working automatically
+        [] Bot working automatically every hour (not every minute)
 
 # Source Code Idea
         https://github.com/SouravJohar/gangsta
@@ -16,6 +13,7 @@
 
 ## APIs
 # Telegram Bot API 
+        https://core.telegram.org/bots/api
         https://cran.r-project.org/web/packages/telegram.bot/vignettes/telegrambot-introduction.html
 
 # (! NOT USED)Set Webhook
