@@ -21,7 +21,7 @@ def coin_reply(coin_url, mode="manual"):
             return e + '\n > BUY TIME 🌕🌑'
         elif float(data['change']) > 10:
             return e + '\n > SELL TIME 🌕🌕'
-        elif float(data['change']) > 5:
+        elif float(data['change']) > 7:
             return e + '\n > SELL TIME 🌕🌑'
         else: 
             return ''
