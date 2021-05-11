@@ -58,7 +58,7 @@ def runbot():
                 elif message == "btc":
                     bot.send_message(coin_reply(base_url+coin_btc), from_)
                 elif message == "all":
-                    all_coins = coin_reply(base_url+coin_btc) + "\n" +  coin_reply(base_url+coin_iot)
+                    all_coins = coin_reply(base_url+coin_btc) + "\n\n" +  coin_reply(base_url+coin_iot)
                     bot.send_message(all_coins, from_)
                 else:
                     bot.send_message("Type btc, iot or all \n or help uwu", from_)
