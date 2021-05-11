@@ -2,9 +2,10 @@
 # Bot @ is @Buyostonkbot
 ## By https://github.com/debello
 
-# TO-DO
+## TO-DO
         [x] Bot working automatically
         [] Bot working automatically every hour (not every minute)
+        [] Bot not repeating it's last own reply
 
 # Source Code Idea
         https://github.com/SouravJohar/gangsta
@@ -47,7 +48,7 @@
             from_ = 239266037 # my telegram user id
             #from_ = item["message"]["from"]["id"]
     {'update_id': 286988464, 'message': {'message_id': 83, 'from': {'id': 239266037, 'is_bot': False, 'first_name': 'Phoskita', 'username': 'phoskita', 'language_code': 'en'}, 'chat': {'id': 239266037, 'first_name': 'Phoskita', 'username': 'phoskita', 'type': 'private'}, 'date': 1618261550, 'text': 'e'}}
-  > message is not found so I wrote my id directly on the variable
+  > Message is not found so I wrote my id directly on the variable
 
 * Result Error
         File "C:\Users\Santi\Documents\GitHub\finbot\server.py", line 39, in <module>

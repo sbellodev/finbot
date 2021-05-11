@@ -55,11 +55,14 @@ def runbot():
                     bot.send_message(coin_reply(base_url+coin_iot), from_)
                 elif message == "btc":
                     bot.send_message(coin_reply(base_url+coin_btc), from_)
+                elif message == "all":
+                    all_coins = coin_reply(base_url+coin_btc) + "\n" +  coin_reply(base_url+coin_iot)
+                    bot.send_message(all_coins, from_)
                 else:
-                    bot.send_message("Type btc or iot\n or help uwu", from_)
+                    bot.send_message("Type btc, iot or all \n or help uwu", from_)
         else:
             # Continuous % coin Check
-            bot.send_message("Automatically-updated", 239266037)
+            #bot.send_message("Automatically-updated", 239266037) # Only in development mode
             all_coins = coin_reply(base_url+coin_btc, "auto") + "\n" +  coin_reply(base_url+coin_iot, "auto")
             bot.send_message(all_coins, from_)
 runbot()
