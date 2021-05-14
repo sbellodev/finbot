@@ -42,7 +42,8 @@ def coin_reply(coin_url, mode="manual", only_mode="disabled"):
                 return e + '\n > SELL TIME 🌕🌑'
             else: 
                 return ''
-        
+        elif only_mode == 'nonemode':
+            return ''
     else:
         return ''
     
@@ -79,7 +80,7 @@ def runbot():
                 elif message == "all":
                     all_coins = coin_reply(base_url+coin_btc) + "\n\n" +  coin_reply(base_url+coin_iot)
                     bot.send_message(all_coins, from_)
-                elif message == "sellmode" or message == "buymode" or message == "disabled":
+                elif message == "sellmode" or message == "buymode" or message == "nonemode" or message == "disabled" :
                     only_mode = message
                     bot.send_message("Mode changed to " + only_mode, from_)
                 else:
