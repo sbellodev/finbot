@@ -22,9 +22,9 @@ def coin_reply(coin_url, mode="manual", only_mode="disabled"):
                 return e + '\n > BUY TIME 🌕🌕'
             elif float(data['change']) < -6:
                 return e + '\n > BUY TIME 🌕🌑'
-            elif float(data['change']) > 10:
+            elif float(data['price']) > 2.3:
                 return e + '\n > SELL TIME 🌕🌕'
-            elif float(data['change']) > 6:
+            elif float(data['price']) > 2.2:
                 return e + '\n > SELL TIME 🌕🌑'
             else: 
                 return ''
@@ -36,9 +36,9 @@ def coin_reply(coin_url, mode="manual", only_mode="disabled"):
             else:
                 return ''
         elif only_mode == 'sellmode':
-            if float(data['change']) > 10:
+            if float(data['price']) > 2.3:
                 return e + '\n > SELL TIME 🌕🌕'
-            elif float(data['change']) > 6:
+            elif float(data['price']) > 2.2:
                 return e + '\n > SELL TIME 🌕🌑'
             else: 
                 return ''
