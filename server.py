@@ -14,8 +14,8 @@ def coin_reply(coin_url, mode="manual", only_mode="default"):
     #print(d.items())
     data = d['data']['coin']
     e = data['symbol'] + ' ' + data['name'] + ' \n Price: \t' + data['price'] + ' \n btcPrice: \t' + data['btcPrice'] + ' \n Change: \t' + data['change']
-    sell_low = 2.2
-    sell_high = 2.3
+    sell_low = 2.0
+    sell_high = 2.2
     buy_low = 1.6
     buy_high = 1.7
 
@@ -75,7 +75,7 @@ def runbot():
                 from_ = 239266037 # enabled for single user 
                 #from_ = item["message"]["from"]["id"] # enabled for 
                 if message == "help":
-                    bot.send_message('beep boop ... \n Supported commands:\n btc: shows bitcoin prices \n iot: shows miota/iota prices\n all: shows all supported coins prices\n buymode or sellmode: shows automatically only sell/buy prices \n none: doesnt show anything \n default: shows b/s prices \n help: shows help lol \n beep boop', from_)
+                    bot.send_message('beep boop ... \n Supported commands:\nbtc: shows bitcoin prices \n iot: shows miota/iota prices\nall: shows all supported coins prices\nbuymode or sellmode: shows automatically only sell/buy prices \nnone: doesnt show anything \ndefault: shows b/s prices \nhelp: shows help lol \nbeep boop', from_)
                 elif message == "uwu":
                     bot.send_message('heheh ewe', from_, )
                 elif message == "iot":
@@ -89,7 +89,7 @@ def runbot():
                     only_mode = message
                     bot.send_message("Mode changed to " + only_mode, from_)
                 else:
-                    bot.send_message("> 'btc', 'iot', 'all'  for crypto prices \n > 'sellmode / buymode / none / default' for filtering \n > current mode: "+only_mode+ "\n 'help' for details", from_)
+                    bot.send_message("> 'btc', 'iot', 'all'  for crypto prices \n> 'sellmode / buymode / none / default' for filtering \n> current mode: "+only_mode+ "\n> 'help' for details", from_)
         else:
             api_coin = coin_reply(base_url+coin_iot, "auto", only_mode) or ''
             if api_coin and api_coin != last_msg:
