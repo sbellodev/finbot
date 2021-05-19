@@ -46,7 +46,7 @@ def coin_reply(coin_url, mode="manual", only_mode="default", buy_price=False, se
 def iffloat(num):
     try: 
         isinstance(float(num), float)
-        return num
+        return float(num)
     except: 
         return False
 
