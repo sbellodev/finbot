@@ -7,6 +7,7 @@ bot = telegram_chatbot("config.cfg")
 base_url = 'https://api.coinranking.com/v2/coin/' 
 coin_iot = 'LtWwuVANwRzV_' # miota
 coin_btc = 'Qwsogvtv82FCd' # btc
+coin_eos = 'iAzbfXiBBKkR6' # eos
 coin_key = 'coinranking561c69335054fafd29f745fcd1592c26f2666ae0810bc273'
 
 def coin_reply(coin_url, mode="manual", only_mode="default", buy_price=False, sell_price=False):
@@ -75,15 +76,17 @@ def runbot():
                 from_ = 239266037 # enabled for single user 
                 #from_ = item["message"]["from"]["id"] # enabled for 
                 if message == "help":
-                    bot.send_message('beep boop ... \n Supported commands:\nbtc: shows bitcoin prices \n iot: shows miota/iota prices\nall: shows all supported coins prices\nbuymode or sellmode: shows automatically only sell/buy prices \nnone: doesnt show anything \ndefault: shows b/s prices \nhelp: shows help lol \nset buy / set sell / set default: set custom alarm-price \nset prices: show custom alarm-pricebeep boop', from_)
+                    bot.send_message('beep boop ... \nSupported commands:\n > btc/iot/eos/all: shows crypto prices \n > buymode/sellmode/none/default: shows auto-mode only sell/buy prices \n > set buy/sell/prices/default: set custom alarm-price \n beep... boop...', from_)
                 elif message == "uwu":
                     bot.send_message('heheh ewe', from_, )
                 elif message == "iot":
                     bot.send_message(coin_reply(base_url+coin_iot), from_)
                 elif message == "btc":
                     bot.send_message(coin_reply(base_url+coin_btc), from_)
+                elif message == "eos":
+                    bot.send_message(coin_reply(base_url+coin_eos), from_)
                 elif message == "all":
-                    all_coins = coin_reply(base_url+coin_btc) + "\n\n" +  coin_reply(base_url+coin_iot)
+                    all_coins = coin_reply(base_url+coin_btc) + "\n\n" +  coin_reply(base_url+coin_iot) + "\n\n" +  coin_reply(base_url+coin_eos)
                     bot.send_message(all_coins, from_)
 
                 elif message.startswith("set sell"):
@@ -105,7 +108,7 @@ def runbot():
                     only_mode = message
                     bot.send_message("Mode changed to " + only_mode, from_)
                 else:
-                    bot.send_message("> 'btc', 'iot', 'all'  for crypto prices \n> 'sellmode / buymode / none / default' for filtering \n> current mode: "+only_mode+ "\n> 'help' for details", from_)
+                    bot.send_message("> 'btc', 'iot', 'eos', 'all'  for crypto prices \n> 'sellmode / buymode / none / default' for filtering \n> current mode: "+only_mode+ "\n> 'help' for details", from_)
         else:
             api_coin = coin_reply(base_url+coin_iot, "auto", only_mode, buy_price= set_buy, sell_price = set_sell) or ''
             if api_coin and api_coin != last_msg:
